@@ -1,0 +1,17 @@
+machine:
+  python:
+    version: 2.7.3
+  services:
+    - docker
+dependencies:
+  pre:
+    - sudo pip install docker-compose
+    - sudo mkdir -p $CIRCLE_TEST_REPORTS/coverage_html/
+
+test:
+#  pre:
+
+  override:
+    - docker-compose run tester
+
+#  post:
