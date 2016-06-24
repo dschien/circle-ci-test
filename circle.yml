@@ -11,15 +11,15 @@ dependencies:
     - sudo pip install docker-compose
     - sudo mkdir -p $CIRCLE_TEST_REPORTS/coverage_html/
 
-  overrides:
-  # https://github.com/docker/compose/releases
-    - curl -L https://github.com/docker/compose/releases/download/1.8.0-rc1/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
-    - chmod +x ~/docker-compose
-    - ~/docker-compose version
+#  overrides:
+#   https://github.com/docker/compose/releases
+#    - curl -L https://github.com/docker/compose/releases/download/1.8.0-rc1/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
+#    - chmod +x ~/docker-compose
+#    - ~/docker-compose version
 test:
 #  pre:
 
   override:
-    - docker-compose run tester
+    - docker-compose up
 
 #  post:
